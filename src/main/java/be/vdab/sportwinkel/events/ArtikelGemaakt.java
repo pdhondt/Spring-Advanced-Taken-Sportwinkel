@@ -1,13 +1,22 @@
 package be.vdab.sportwinkel.events;
 
 import be.vdab.sportwinkel.domain.Artikel;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "artikelsgemaakt")
 public class ArtikelGemaakt {
-    private final long id;
-    private final String naam;
+    @Id
+    private long id;
+    private String naam;
     public ArtikelGemaakt(Artikel artikel) {
         this.id = artikel.getId();
         this.naam = artikel.getNaam();
+    }
+    protected ArtikelGemaakt() {
+
     }
 
     public long getId() {
